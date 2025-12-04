@@ -666,9 +666,13 @@ bool ur_platform_handle_t_::isDriverVersionNewerOrSimilar(
       }
       DriverVersionBuild = atoi(BuildHotfixVersionValues[0].c_str());
     } else {
+      std::cerr << ">>> DriverVersion: " << DriverVersionMajor << "."
+                << DriverVersionMinor << "." << DriverVersionBuild << "\n";
       return true;
     }
   }
+  std::cerr << ">>> DriverVersion: " << DriverVersionMajor << "."
+            << DriverVersionMinor << "." << DriverVersionBuild << "\n";
   return std::make_tuple(DriverVersionMajor, DriverVersionMinor,
                          DriverVersionBuild) >=
          std::make_tuple(VersionMajor, VersionMinor, VersionBuild);
