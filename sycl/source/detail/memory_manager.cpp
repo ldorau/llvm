@@ -6,7 +6,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include <detail/context_impl.hpp>
 #include <detail/device_image_impl.hpp>
 #include <detail/event_impl.hpp>

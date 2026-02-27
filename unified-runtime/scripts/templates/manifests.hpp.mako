@@ -22,7 +22,7 @@ from templates import helper as th
 #include <vector>
 
 #include "ur_util.hpp"
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 namespace ur_loader {
 struct ur_adapter_manifest {

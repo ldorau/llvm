@@ -6,7 +6,7 @@
 
 #include "fixtures.h"
 #include "queue.hpp"
-#include "ur_ddi.h"
+#include "ur/ur_ddi.h"
 
 using urCudaQueueGetNativeHandleTest = uur::urQueueTest;
 UUR_INSTANTIATE_DEVICE_TEST_SUITE(urCudaQueueGetNativeHandleTest);

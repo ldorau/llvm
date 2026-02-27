@@ -5,7 +5,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include <detail/error_handling/error_handling.hpp>
 
 #include <detail/context_impl.hpp>

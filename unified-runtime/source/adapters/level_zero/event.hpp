@@ -20,14 +20,14 @@
 #include <vector>
 
 #include <ur/ur.hpp>
-#include <ur_ddi.h>
+#include <ur/ur_ddi.h>
 #include <ze_api.h>
 #include <zes_api.h>
 
 #include "common.hpp"
 #include "common/ur_ref_count.hpp"
 #include "queue.hpp"
-#include "ur_api.h"
+#include "ur/ur_api.h"
 
 extern "C" {
 ur_result_t urEventReleaseInternal(ur_event_handle_t Event,

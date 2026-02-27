@@ -9,7 +9,7 @@
 // RUN: %maybe-v1 ./confirm_version | FileCheck %s --check-prefix CHECK-V1
 // RUN: %maybe-v2 ./confirm_version | FileCheck %s --check-prefix CHECK-V2
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 
 #include <array>
 #include <cassert>

@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 
 struct ur_queue_extensions {
   // Non-batched queues don't need to perform any action

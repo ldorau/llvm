@@ -12,7 +12,7 @@
  * @version v0.12-r0
  *
  */
-#include "ur_api.h"
+#include "ur/ur_api.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 /// @brief Create a loader config object.

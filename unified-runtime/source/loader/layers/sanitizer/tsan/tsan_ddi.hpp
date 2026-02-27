@@ -11,7 +11,7 @@
  *
  */
 
-#include "ur_ddi.h"
+#include "ur/ur_ddi.h"
 
 namespace ur_sanitizer_layer {
 

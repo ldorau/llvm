@@ -11,7 +11,7 @@
 #pragma once
 
 #include <OffloadAPI.h>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include "common.hpp"
 #include "event.hpp"

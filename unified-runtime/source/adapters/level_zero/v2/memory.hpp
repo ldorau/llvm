@@ -12,7 +12,7 @@
 
 #include <cassert>
 
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include "../device.hpp"
 #include "../helpers/memory_helpers.hpp"

@@ -14,9 +14,9 @@
 #ifndef UR_LOADER_LIB_H
 #define UR_LOADER_LIB_H 1
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
+#include "ur/ur_ddi.h"
 #include "ur_codeloc.hpp"
-#include "ur_ddi.h"
 #include "ur_proxy_layer.hpp"
 #include "ur_util.hpp"
 

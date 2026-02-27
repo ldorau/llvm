@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include <uur/fixtures.h>
 
 using urUSMPoolRetainTest = uur::urUSMPoolTest;

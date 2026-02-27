@@ -19,7 +19,7 @@
 #include <sstream>
 #include <string_view>
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include "xpti/xpti_trace_framework.h"
 
 constexpr uint16_t TRACE_FN_BEGIN =

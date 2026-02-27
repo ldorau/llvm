@@ -7,7 +7,7 @@
 // RUN: %maybe-v1 ./device_select_binary-test
 // RUN: %maybe-v2 ./device_select_binary-test
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include <uur/fixtures.h>
 
 #include <array>

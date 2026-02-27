@@ -11,7 +11,7 @@
 
 #include <cuda.h>
 #include <memory>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include <atomic>
 #include <mutex>

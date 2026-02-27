@@ -9,7 +9,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "common.hpp"
-#include "ur_api.h"
+#include "ur/ur_api.h"
 
 UR_APIEXPORT ur_result_t UR_APICALL urMemoryExportAllocExportableMemoryExp(
     ur_context_handle_t /*hContext*/, ur_device_handle_t /*hDevice*/,

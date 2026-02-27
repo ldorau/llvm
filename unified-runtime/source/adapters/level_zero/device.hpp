@@ -23,7 +23,7 @@
 #include "common.hpp"
 #include "common/ur_ref_count.hpp"
 #include <ur/ur.hpp>
-#include <ur_ddi.h>
+#include <ur/ur_ddi.h>
 #include <ze_api.h>
 #include <zes_api.h>
 

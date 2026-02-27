@@ -12,9 +12,9 @@
 #include <cstdlib>
 
 #include <logger/ur_logger.hpp>
-#include <ur_print.hpp>
+#include <ur/ur_print.hpp>
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 
 using namespace logger;
 

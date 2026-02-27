@@ -10,7 +10,7 @@
 
 #include "kernel.hpp"
 #include "logger/ur_logger.hpp"
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include "ur_interface_loader.hpp"
 
 #include "helpers/kernel_helpers.hpp"

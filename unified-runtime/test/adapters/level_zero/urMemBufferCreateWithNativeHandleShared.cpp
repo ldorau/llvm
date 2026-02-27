@@ -7,7 +7,7 @@
 // RUN: %maybe-v1 ./mem_buffer_create_with_native_handle-test
 // RUN: %maybe-v2 ./mem_buffer_create_with_native_handle-test
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include "uur/checks.h"
 #include "uur/raii.h"
 #include "ze_api.h"

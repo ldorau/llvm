@@ -12,7 +12,7 @@
 #include <stack>
 
 #include <ur/ur.hpp>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 #include <ze_api.h>
 
 #include "adapters/level_zero/v2/queue_api.hpp"

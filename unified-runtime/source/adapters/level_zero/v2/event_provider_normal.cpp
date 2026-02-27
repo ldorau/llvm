@@ -8,7 +8,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include <ur_api.h>
+#include <ur/ur_api.h>
 #include <ze_api.h>
 
 #include <memory>

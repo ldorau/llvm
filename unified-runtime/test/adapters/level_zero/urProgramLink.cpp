@@ -7,7 +7,7 @@
 // RUN: %maybe-v1 ./link-test
 // RUN: %maybe-v2 ./link-test
 
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include <uur/fixtures.h>
 
 using urLevelZeroProgramLinkTest = uur::urProgramTest;

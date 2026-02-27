@@ -9,7 +9,7 @@
 //===----------------------------------------------------------------------===//
 
 #include <OffloadAPI.h>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include "event.hpp"
 #include "queue.hpp"

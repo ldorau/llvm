@@ -8,8 +8,8 @@
 #define UR_CONFORMANCE_INCLUDE_CHECKS_H_INCLUDED
 
 #include <gtest/gtest.h>
-#include <ur_api.h>
-#include <ur_print.hpp>
+#include <ur/ur_api.h>
+#include <ur/ur_print.hpp>
 #include <uur/optional_queries.h>
 #include <uur/utils.h>
 

@@ -187,7 +187,7 @@ def main():
     if args["clean"]:
         clean()
 
-    incpath = os.path.join("../include/")
+    incpath = os.path.join("../include/ur/")
     srcpath = os.path.join("../source/")
     docpath = os.path.join("../docs/")
 

@@ -10,7 +10,7 @@
 
 #include "enqueued_pool.hpp"
 
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 EnqueuedPool::~EnqueuedPool() { cleanup(); }
 

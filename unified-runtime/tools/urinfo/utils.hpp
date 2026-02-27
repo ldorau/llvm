@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include "ur_api.h"
-#include "ur_print.hpp"
+#include "ur/ur_api.h"
+#include "ur/ur_print.hpp"
 #include <algorithm>
 #include <cstdlib>
 #include <iostream>

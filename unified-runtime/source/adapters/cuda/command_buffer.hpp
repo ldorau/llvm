@@ -9,8 +9,8 @@
 //===----------------------------------------------------------------------===//
 
 #include <ur/ur.hpp>
-#include <ur_api.h>
-#include <ur_print.hpp>
+#include <ur/ur_api.h>
+#include <ur/ur_print.hpp>
 
 #include "common/ur_ref_count.hpp"
 #include "context.hpp"

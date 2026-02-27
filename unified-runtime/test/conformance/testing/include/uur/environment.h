@@ -12,7 +12,7 @@
 #include <optional>
 #include <string>
 #include <unordered_map>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 namespace uur {
 
 struct AdapterEnvironment : ::testing::Environment {

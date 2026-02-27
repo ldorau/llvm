@@ -11,7 +11,7 @@
 #include <OffloadAPI.h>
 #include <unordered_set>
 #include <ur/ur.hpp>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include "adapter.hpp"
 #include "device.hpp"

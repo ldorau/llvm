@@ -12,7 +12,7 @@
 
 #include <mutex>
 #include <set>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include "common.hpp"
 #include "device.hpp"

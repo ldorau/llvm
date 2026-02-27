@@ -10,7 +10,7 @@
 
 #include <OffloadAPI.h>
 #include <assert.h>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include "context.hpp"
 #include "event.hpp"

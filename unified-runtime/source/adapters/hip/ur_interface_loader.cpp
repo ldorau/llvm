@@ -9,8 +9,8 @@
 //===----------------------------------------------------------------------===//
 
 #include "common.hpp"
-#include <ur_api.h>
-#include <ur_ddi.h>
+#include <ur/ur_api.h>
+#include <ur/ur_ddi.h>
 
 namespace {
 

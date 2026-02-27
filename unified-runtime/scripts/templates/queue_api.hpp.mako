@@ -24,7 +24,7 @@ from templates import helper as th
 
 #pragma once
 
-#include <ur_api.h>
+#include <ur/ur_api.h>
 #include "queue_extensions.hpp"
 
 struct ur_queue_t_ : ur_queue_extensions {

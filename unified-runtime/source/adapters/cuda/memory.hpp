@@ -12,7 +12,7 @@
 #include <cassert>
 #include <cuda.h>
 #include <memory>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 #include <variant>
 
 #include "common.hpp"

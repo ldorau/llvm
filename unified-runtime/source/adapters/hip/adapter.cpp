@@ -11,7 +11,7 @@
 #include "adapter.hpp"
 #include "common.hpp"
 
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include <memory>
 

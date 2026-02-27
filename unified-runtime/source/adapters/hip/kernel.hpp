@@ -10,7 +10,7 @@
 #pragma once
 
 #include "common/ur_ref_count.hpp"
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include <array>
 #include <atomic>

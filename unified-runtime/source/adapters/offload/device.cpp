@@ -10,7 +10,7 @@
 
 #include <OffloadAPI.h>
 #include <ur/ur.hpp>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include "adapters/offload/adapter.hpp"
 #include "device.hpp"

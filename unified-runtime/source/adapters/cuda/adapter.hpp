@@ -15,7 +15,7 @@
 #include "logger/ur_logger.hpp"
 #include "platform.hpp"
 #include "tracing.hpp"
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 #include <atomic>
 #include <memory>

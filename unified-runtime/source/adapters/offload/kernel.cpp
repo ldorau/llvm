@@ -13,7 +13,7 @@
 #include "ur2offload.hpp"
 #include <OffloadAPI.h>
 #include <ur/ur.hpp>
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 UR_APIEXPORT ur_result_t UR_APICALL
 urKernelCreate(ur_program_handle_t hProgram, const char *pKernelName,

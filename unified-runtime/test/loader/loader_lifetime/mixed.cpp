@@ -4,10 +4,10 @@
 //
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 #include "fixtures.hpp"
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include <gtest/gtest.h>
 #include <thread>
-#include <ur_print.hpp>
+#include <ur/ur_print.hpp>
 
 TEST(urLoaderLifetime, ST) {
   ur_result_t status = urLoaderTearDown();

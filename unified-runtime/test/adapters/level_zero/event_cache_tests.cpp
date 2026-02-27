@@ -9,7 +9,7 @@
 // UNSUPPORTED: system-windows
 // REQUIRES: v1
 
-#include "ur_print.hpp"
+#include "ur/ur_print.hpp"
 #include "uur/fixtures.h"
 #include "uur/raii.h"
 

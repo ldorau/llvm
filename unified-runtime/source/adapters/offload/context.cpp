@@ -9,7 +9,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "context.hpp"
-#include <ur_api.h>
+#include <ur/ur_api.h>
 
 UR_APIEXPORT ur_result_t UR_APICALL urContextCreate(
     uint32_t DeviceCount, const ur_device_handle_t *phDevices,

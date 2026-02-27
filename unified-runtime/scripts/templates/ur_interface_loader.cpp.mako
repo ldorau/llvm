@@ -18,8 +18,8 @@ from templates import helper as th
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 //
 //===----------------------------------------------------------------------===//
-#include <${n}_api.h>
-#include <${n}_ddi.h>
+#include <ur/${n}_api.h>
+#include <ur/${n}_ddi.h>
 #include <mutex>
 
 #include "ur_interface_loader.hpp"

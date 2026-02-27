@@ -11,7 +11,7 @@
 
 #include "common.hpp"
 #include "external/driver_experimental/zex_graph.h"
-#include "ur_api.h"
+#include "ur/ur_api.h"
 #include "ze_api.h"
 #include "ze_ddi.h"
 #include "zes_api.h"
