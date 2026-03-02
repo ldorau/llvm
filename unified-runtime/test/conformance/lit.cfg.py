@@ -18,6 +18,12 @@ config.test_exec_root = config.binary_dir
 
 config.environment["UR_LOADER_USE_LEVEL_ZERO_V2"] = "1" if config.using_l0_v2 else "0"
 
+# ZE_ENABLE_ALT_DRIVERS=/home/ldorau/workdir/compute-runtime-build/bin/libze_intel_gpu.so
+config.environment["ZE_ENABLE_ALT_DRIVERS"] = "/home/ldorau/workdir/compute-runtime-build/bin/libze_intel_gpu.so"
+
+# LD_LIBRARY_PATH=/home/ldorau/workdir/igc-install/lib/:/home/ldorau/workdir/level-zero-install/lib/:/home/ldorau/work/llvm/build/install/lib/::/home/ldorau/.local/lib:/home/ldorau/.local/lib/python3.10/site-packages/
+config.environment["LD_LIBRARY_PATH"] = "/home/ldorau/workdir/igc-install/lib/:/home/ldorau/workdir/level-zero-install/lib/:/home/ldorau/work/llvm/build/install/lib/::/home/ldorau/.local/lib:/home/ldorau/.local/lib/python3.10/site-packages/"
+
 # Copy offload leads to timeouts
 # Tracker: https://jira.devtools.intel.com/browse/URT-1026
 config.environment["UR_L0_V2_FORCE_DISABLE_COPY_OFFLOAD"] = "1"
