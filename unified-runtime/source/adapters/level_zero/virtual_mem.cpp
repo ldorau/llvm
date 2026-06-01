@@ -10,7 +10,7 @@
 #include "common.hpp"
 #include "device.hpp"
 #include "logger/ur_logger.hpp"
-#include "physical_mem.hpp"
+#include "v2/physical_mem.hpp"
 
 #ifdef UR_ADAPTER_LEVEL_ZERO_V2
 #include "v2/context.hpp"
@@ -80,6 +80,16 @@ ur_result_t urVirtualMemMap(ur_context_handle_t hContext, const void *pStart,
                             size_t size, ur_physical_mem_handle_t hPhysicalMem,
                             size_t offset,
                             ur_virtual_mem_access_flags_t flags) {
+  // IPC-opened physical memory handles already have a virtual address
+  // established by zeMemOpenIpcHandle (stored in IpcVirtualAddress).
+  // The UR virtual memory reservation at pStart is a separate address range
+  // that cannot be backed by an IPC handle via zeVirtualMemMap — the driver
+  // requires the physical handle to map, which is null on the consumer side.
+  // Return INVALID_ARGUMENT so callers know to use
+  // urPhysicalMemGetInfo(UR_PHYSICAL_MEM_INFO_IPC_VIRTUAL_ADDRESS) instead.
+  if (hPhysicalMem->IpcVirtualAddress)
+    return UR_RESULT_ERROR_INVALID_ARGUMENT;
+
   ze_memory_access_attribute_t AccessAttr = ZE_MEMORY_ACCESS_ATTRIBUTE_NONE;
   if (flags & UR_VIRTUAL_MEM_ACCESS_FLAG_READ_WRITE)
     AccessAttr = ZE_MEMORY_ACCESS_ATTRIBUTE_READWRITE;

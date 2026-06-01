@@ -10,6 +10,10 @@
 #include <algorithm>
 #include <climits>
 #include <string.h>
+#ifdef __linux__
+#include <sys/syscall.h>
+#include <unistd.h>
+#endif
 #include <ur/ur.hpp>
 
 #include "context.hpp"
@@ -20,6 +24,7 @@
 #include "queue.hpp"
 #include "ur_interface_loader.hpp"
 #include "ur_level_zero.hpp"
+#include "v2/physical_mem.hpp"
 
 // Default to using compute engine for fill operation, but allow to
 // override this with an environment variable.

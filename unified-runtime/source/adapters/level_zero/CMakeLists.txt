@@ -25,7 +25,6 @@ if(UR_BUILD_ADAPTER_L0)
         ${CMAKE_CURRENT_SOURCE_DIR}/usm.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/memory.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/kernel.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/physical_mem.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/platform.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/program.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/queue.hpp
@@ -132,7 +131,6 @@ if(UR_BUILD_ADAPTER_L0_V2)
         ${CMAKE_CURRENT_SOURCE_DIR}/device.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/image_common.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/platform.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/physical_mem.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/program.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/helpers/kernel_helpers.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/helpers/memory_helpers.hpp
@@ -145,7 +143,6 @@ if(UR_BUILD_ADAPTER_L0_V2)
         ${CMAKE_CURRENT_SOURCE_DIR}/image_common.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ur_interface_loader.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/platform.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/physical_mem.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/program.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/helpers/kernel_helpers.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/helpers/memory_helpers.cpp
@@ -170,6 +167,7 @@ if(UR_BUILD_ADAPTER_L0_V2)
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/kernel.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/memory.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/lockable.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/v2/physical_mem.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/queue_api.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/queue_batched.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/queue_immediate_in_order.hpp
@@ -187,6 +185,7 @@ if(UR_BUILD_ADAPTER_L0_V2)
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/event.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/kernel.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/memory.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/v2/physical_mem.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/queue_api.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/queue_batched.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/v2/queue_create.cpp
