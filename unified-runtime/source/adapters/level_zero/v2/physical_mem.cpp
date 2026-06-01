@@ -225,7 +225,7 @@ ur_result_t urIPCOpenPhysMemHandleExp(ur_context_handle_t hContext,
       static_cast<const ZeIPCPhysMemHandleData *>(pIPCPhysMemHandleData);
 
   if (HandleData->Size == 0)
-    return UR_RESULT_ERROR_INVALID_VALUE;
+    return UR_RESULT_ERROR_INVALID_ARGUMENT;
 
   // Open the IPC handle in this process.  zeMemOpenIpcHandle creates a virtual
   // mapping backed by the exporter's physical memory and returns a pointer to
