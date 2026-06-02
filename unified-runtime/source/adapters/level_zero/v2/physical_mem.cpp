@@ -11,10 +11,6 @@
 #include "../device.hpp"
 #include "common.hpp"
 
-#ifdef __linux__
-#include <fcntl.h>
-#endif
-
 #include "context.hpp"
 
 namespace ur::level_zero {
@@ -148,24 +144,6 @@ ur_result_t urIPCGetPhysMemHandleExp(ur_context_handle_t hContext,
     return UR_RESULT_ERROR_UNSUPPORTED_FEATURE;
   if (ZeRes != ZE_RESULT_SUCCESS)
     return ze2urResult(ZeRes);
-
-  // Some driver versions accept this call but return an fd-based handle even
-  // when ZE_IPC_MEM_HANDLE_TYPE_FLAG_DEFAULT is requested, because they do not
-  // yet support passing a ze_physical_mem_handle_t directly.  An fd-based
-  // handle cannot be serialized to a plain byte buffer for cross-process
-  // transfer without SCM_RIGHTS socket transfer.  Detect this case: if the
-  // first bytes of the handle form a valid open file descriptor in this
-  // process, the handle is fd-based.  Release it and return UNSUPPORTED_FEATURE
-  // so callers can skip gracefully.
-  {
-    int FdVal = 0;
-    static_assert(sizeof(IpcHandle.data) >= sizeof(FdVal));
-    memcpy(&FdVal, IpcHandle.data, sizeof(FdVal));
-    if (FdVal >= 0 && ::fcntl(FdVal, F_GETFD) >= 0) {
-      zeMemPutIpcHandle(hContext->getZeHandle(), IpcHandle);
-      return UR_RESULT_ERROR_UNSUPPORTED_FEATURE;
-    }
-  }
 
   auto *HandleData = new (std::nothrow) ZeIPCPhysMemHandleData;
   if (!HandleData) {
