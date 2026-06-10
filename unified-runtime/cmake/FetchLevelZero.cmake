@@ -124,6 +124,21 @@ find_path(L0_COMPUTE_RUNTIME_HEADERS
   NAMES "ze_intel_gpu.h"
   PATH_SUFFIXES "level_zero"
 )
+# Validate that the found headers are new enough to contain the types required
+# by this project.  If the system headers are stale (e.g. they predate
+# ze_intel_xe_device_exp_properties_t), discard the result and fall through to
+# the compute-runtime fetch path below.
+if(L0_COMPUTE_RUNTIME_HEADERS)
+  file(READ "${L0_COMPUTE_RUNTIME_HEADERS}/ze_intel_gpu.h" _ze_intel_gpu_h_contents)
+  if(NOT _ze_intel_gpu_h_contents MATCHES "ze_intel_xe_device_exp_properties_t")
+    message(STATUS
+      "System ze_intel_gpu.h at ${L0_COMPUTE_RUNTIME_HEADERS} is too old "
+      "(missing ze_intel_xe_device_exp_properties_t); "
+      "will fetch compute-runtime headers instead.")
+    unset(L0_COMPUTE_RUNTIME_HEADERS CACHE)
+  endif()
+  unset(_ze_intel_gpu_h_contents)
+endif()
 if(L0_COMPUTE_RUNTIME_HEADERS)
     set(COMPUTE_RUNTIME_LEVEL_ZERO_INCLUDE "${L0_COMPUTE_RUNTIME_HEADERS}")
     set(COMPUTE_RUNTIME_REPO_PATH "${L0_COMPUTE_RUNTIME_HEADERS}")
