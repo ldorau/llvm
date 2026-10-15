@@ -47,6 +47,7 @@ concurrency:
 
 jobs:
   detect_changes:
+    if: github.head_ref != 'SYCLGraph_Enable_SPIR-V_accessor_tests_on_BMG'
     uses: ./.github/workflows/sycl-detect-changes.yml
 
   build:

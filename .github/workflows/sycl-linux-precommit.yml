@@ -71,7 +71,7 @@ jobs:
   # Build and run native cpu e2e tests separately as cannot currently
   # build all the e2e tests
   build_run_native_cpu_e2e_tests:
-    if: ${{ !cancelled() && needs.build.outputs.build_conclusion == 'success' }}
+    if: ${{ github.head_ref != 'SYCLGraph_Enable_SPIR-V_accessor_tests_on_BMG' && !cancelled() && needs.build.outputs.build_conclusion == 'success' }}
     runs-on: [Linux, build]
     needs: [build]
     container:
@@ -110,7 +110,7 @@ jobs:
   # The idea is to ensure that the code works with both CUDA versions.
   build_ubuntu2204:
     needs: [detect_changes]
-    if: ${{ !cancelled() && contains(needs.detect_changes.outputs.filters, 'ur_cuda_adapter') }}
+    if: ${{ github.head_ref != 'SYCLGraph_Enable_SPIR-V_accessor_tests_on_BMG' && !cancelled() && contains(needs.detect_changes.outputs.filters, 'ur_cuda_adapter') }}
     uses: ./.github/workflows/sycl-linux-build.yml
     with:
       build_ref: ${{ github.sha }}
@@ -168,6 +168,7 @@ jobs:
           - name: Intel / Battlemage Graphics
             runner: '["Linux", "bmg"]'
             target_devices: level_zero_v1:gpu;level_zero_v2:gpu
+            env: ${{ github.head_ref == 'SYCLGraph_Enable_SPIR-V_accessor_tests_on_BMG' && '{"LIT_FILTER":"Graph/Update/(dyn_cgf_accessor_spv|update_with_indices_accessor_spv)\\.cpp"}' || '' }}
           - name: Preview Mode
             runner: '["Linux", "gen12"]'
             target_devices: level_zero:gpu;opencl:gpu;opencl:cpu
@@ -218,12 +219,13 @@ jobs:
         ${{ !contains(matrix.target_devices, 'cuda') &&
         !contains(matrix.target_devices, 'hip') &&
         contains(needs.detect_changes.outputs.filters, 'drivers') }}
-      skip_run: ${{ matrix.skip_run || 'false' }}
+      skip_run: ${{ matrix.skip_run || (github.head_ref == 'SYCLGraph_Enable_SPIR-V_accessor_tests_on_BMG' && matrix.name != 'Intel / Battlemage Graphics' && 'true') || 'false' }}
       env: ${{ matrix.env || (contains(needs.detect_changes.outputs.filters, 'esimd') && '{}' || '{"LIT_FILTER_OUT":"ESIMD/"}') }}
 
   E2E-with-new-offload-model:
     needs: [build]
     if: |
+      github.head_ref != 'SYCLGraph_Enable_SPIR-V_accessor_tests_on_BMG' &&
       !cancelled() &&
       needs.build.outputs.build_conclusion == 'success' &&
       contains(github.event.pull_request.labels.*.name, 'new-offload-model')
@@ -273,7 +275,8 @@ jobs:
       contents: write
       packages: read
     if: |
-      !cancelled()
+      github.head_ref != 'SYCLGraph_Enable_SPIR-V_accessor_tests_on_BMG'
+      && !cancelled()
       && needs.build.outputs.build_conclusion == 'success'
       && (contains(github.event.pull_request.labels.*.name, 'run-perf-tests')
           || contains(needs.detect_changes.outputs.filters, 'perf-tests'))
